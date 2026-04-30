@@ -25,7 +25,11 @@ The source system (OLTP) was designed in a prior group project. This assignment 
 
 ## Star Schema
 
-![Star Schema Diagram](FactTables_Star_Schemas.jpg)
+![Star Schema — FactAuditLog](fact_audit_log_star_schemas_dark.jpg)
+
+![Star Schema — FactArticleView](fact_article_view_star_schemas_dark.jpg)
+
+![Star Schema — Combined](fact_tables_star_schemas_dark.jpg)
 
 ### Fact Tables
 
@@ -52,7 +56,7 @@ The source system (OLTP) was designed in a prior group project. This assignment 
 
 ## Source Model (OLTP)
 
-![ER Diagram](ER_Diagram.jpg)
+![ER Diagram](er_diagram.jpg)
 
 The source database `TestDataDB` contains:
 
@@ -83,12 +87,14 @@ Security levels are modelled on Swedish military OR/OF ranks:
 
 | File | Description |
 |------|-------------|
-| `TestDB_Create_And_Seed.sql` | Creates `TestDataDB` with all OLTP tables, indexes, constraints and seed data (10 articles, 10 users, full audit trail, anonymous view logs). **Run first.** |
-| `Assignment_Create_And_Load.sql` | Creates `DDNews` star schema (dimensions + facts + FK constraints + indexes), then ETL-loads from `TestDataDB`. **Run second.** |
-| `ER_Diagram.jpg` | Source OLTP entity–relationship diagram |
-| `FactTables_Star_Schemas.jpg` | Star schema diagram showing both fact tables and all seven dimensions |
-| `Dokumentation.docx` | Full written report covering Steps 1–8: business understanding, grain definition, SCD reasoning, source-to-target mapping, and reflection |
-| `Assignment.pdf` | The original assignment brief |
+| `test_db_create_and_seed.sql` | Creates `TestDataDB` with all OLTP tables, indexes, constraints and seed data (10 articles, 10 users, full audit trail, anonymous view logs). **Run first.** |
+| `assignment_create_and_load.sql` | Creates `DDNews` star schema (dimensions + facts + FK constraints + indexes), then ETL-loads from `TestDataDB`. **Run second.** |
+| `er_diagram.jpg` | Source OLTP entity–relationship diagram |
+| `fact_audit_log_star_schemas_dark.jpg` | Star schema diagram — FactAuditLog and its dimensions |
+| `fact_article_view_star_schemas_dark.jpg` | Star schema diagram — FactArticleView and its dimensions |
+| `fact_tables_star_schemas_dark.jpg` | Combined star schema showing both fact tables and all seven dimensions |
+| `dokumentation.docx` | Full written report covering Steps 1–8: business understanding, grain definition, SCD reasoning, source-to-target mapping, and reflection |
+| `assignment.pdf` | The original assignment brief |
 
 ---
 
@@ -98,7 +104,7 @@ Security levels are modelled on Swedish military OR/OF ranks:
 
 **Step 1 — Source database**
 
-Open and execute `TestDB_Create_And_Seed.sql`.  
+Open and execute `test_db_create_and_seed.sql`.  
 This creates `TestDataDB` and seeds it with:
 - 5 departments, 16 security roles, 10 users
 - 10 articles across full workflow states (Draft → Published)
@@ -107,7 +113,7 @@ This creates `TestDataDB` and seeds it with:
 
 **Step 2 — Data warehouse**
 
-Open and execute `Assignment_Create_And_Load.sql`.  
+Open and execute `assignment_create_and_load.sql`.  
 This creates `DDNews`, builds the star schema, and ETL-loads all tables from `TestDataDB`. The script ends with two verification queries:
 
 ```sql
