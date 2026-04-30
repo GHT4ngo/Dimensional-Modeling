@@ -29,7 +29,6 @@ The source system (OLTP) was designed in a prior group project. This assignment 
 
 ![Star Schema — FactArticleView](fact_article_view_star_schemas_dark.jpg)
 
-![Star Schema — Combined](fact_tables_star_schemas_dark.jpg)
 
 ### Fact Tables
 
@@ -92,7 +91,6 @@ Security levels are modelled on Swedish military OR/OF ranks:
 | `er_diagram.jpg` | Source OLTP entity–relationship diagram |
 | `fact_audit_log_star_schemas_dark.jpg` | Star schema diagram — FactAuditLog and its dimensions |
 | `fact_article_view_star_schemas_dark.jpg` | Star schema diagram — FactArticleView and its dimensions |
-| `fact_tables_star_schemas_dark.jpg` | Combined star schema showing both fact tables and all seven dimensions |
 | `dokumentation.docx` | Full written report covering Steps 1–8: business understanding, grain definition, SCD reasoning, source-to-target mapping, and reflection |
 | `assignment.pdf` | The original assignment brief |
 
