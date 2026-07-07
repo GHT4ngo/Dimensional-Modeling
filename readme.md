@@ -9,7 +9,7 @@
 
 ## Live Front
 
-**[dimensional-modeling-assignment-christofer.lovable.app](https://dimensional-modeling-assignment-christofer.lovable.app/)**
+**[dimmod.t4ngo.com](https://dimmod.t4ngo.com/)**
 
 An interactive presentation of the project built with Lovable.
 
